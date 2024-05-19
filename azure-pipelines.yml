@@ -22,6 +22,7 @@ steps:
     Inline: |
       # You can write your azure powershell scripts inline here. 
       # You can also pass predefined and custom variables to this script using arguments
+      cd CICDFlaskApp
       cd flask-sklearn
       make all
 
@@ -31,6 +32,7 @@ steps:
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
+      cd CICDFlaskApp
       cd flask-sklearn
       az webapp up --name fl-app -g Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
   displayName: 'Deploy FL app'
