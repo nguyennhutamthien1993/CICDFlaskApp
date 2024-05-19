@@ -12,6 +12,9 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- checkout: self
+  displayName: 'Checkout source'
+
 - script: |
     cd flask-sklearn
     make all
