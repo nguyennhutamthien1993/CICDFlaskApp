@@ -15,24 +15,8 @@ steps:
 - checkout: self
   displayName: 'Checkout source'
 
-- task: AzurePowerShell@5
-  inputs:
-    ScriptType: 'InlineScript'
-    azureSubscription: arm
-    Inline: |
-      # You can write your azure powershell scripts inline here. 
-      # You can also pass predefined and custom variables to this script using arguments
-      cd CICDFlaskApp
-      cd flask-sklearn
-      make all
-
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'arm'
-    scriptType: 'ps'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      cd CICDFlaskApp
-      cd flask-sklearn
-      az webapp up --name fl-app -g Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
+- script: |
+    cd flask-sklearn
+    make all
+    az webapp up --name fl-app -g Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
   displayName: 'Deploy FL app'
