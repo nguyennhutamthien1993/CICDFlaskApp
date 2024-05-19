@@ -1,0 +1,1 @@
+az webapp up --name fl-app -g Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
