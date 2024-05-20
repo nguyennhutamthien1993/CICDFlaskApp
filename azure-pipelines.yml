@@ -21,6 +21,6 @@ steps:
       # Write your PowerShell commands here.
       cd flask-sklearn
       make all
-      az webapp up --name fl-app -g Azuredevops --sku B1 --logs
+      az webapp up --name fl-app -g Azuredevops --sku B1
       Write-Host "Hello World"
   displayName: 'Deploy FL app'
