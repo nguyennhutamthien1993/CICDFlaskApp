@@ -14,9 +14,13 @@ steps:
 
 - checkout: self
   displayName: 'Checkout source'
-
-- script: |
-    cd flask-sklearn
-    make all
-    az webapp up --name fl-app -g Azuredevops --sku B1 --logs
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      cd flask-sklearn
+      make all
+      az webapp up --name fl-app -g Azuredevops --sku B1 --logs
+      Write-Host "Hello World"
   displayName: 'Deploy FL app'
