@@ -1,11 +1,10 @@
 # Overview
-
-<TODO: complete this with an overview of your project>
+![Python App](https://github.com/nguyennhutamthien1993/CICDFlaskApp/actions/workflows/pythonapp.yml/badge.svg)
 
 ## Project Plan
 
 * A [link](https://trello.com/b/Wgsr5BSy/devops-cicd) to a Trello board for the project
-* A link to a ![spreadsheet](./Project Plan 2024.xlsx) that includes the original and final project plan 
+* A link to a [spreadsheet](./Project Plan 2024.xlsx) that includes the original and final project plan 
 
 ## Instructions
 
@@ -34,7 +33,7 @@
 
 # Passing tests that are displayed after running the `make all` command from the `Makefile`
 * Run command line `make all` with the result below:
-!(./screenshots/make-all-output.png)
+![](./screenshots/make-all-output.png)
 # Output of a test run
 ![](./screenshots/make-test.png)
 
