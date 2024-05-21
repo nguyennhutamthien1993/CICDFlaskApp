@@ -1,28 +1,28 @@
 # Overview
 ![Python App](https://github.com/nguyennhutamthien1993/CICDFlaskApp/actions/workflows/pythonapp.yml/badge.svg)
 
-## Project Plan
+# Project Plan
 
 * A [link](https://trello.com/b/Wgsr5BSy/devops-cicd) to a Trello board for the project
 * A link to a [spreadsheet](./Project Plan 2024.xlsx) that includes the original and final project plan 
 
-## Instructions
+# Instructions
 
-# Architectural Diagram (Shows how key parts of the system work)
+## Architectural Diagram (Shows how key parts of the system work)
 ![](./screenshots/CICD-overview.png)
 
-# Setup Azure Cloud Shell
+## Setup Azure Cloud Shell
 * Login portal Azure
 * Launch Cloud Shell from the top navigation of the Azure portal
 * Select the Subscription used to create the storage account and file share
 * Select Create storage
 
-# Project running on Azure App Service
+## Project running on Azure App Service
 * Move to flask-sklearn folder by cmd `cd flask-sklearn`
 * Run command line `az webapp up --name fl-app -g Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"` to deploy Azure App Service
 ![](./screenshots/webapp-home.png)
 
-# Project cloned into Azure Cloud Shell
+## Project cloned into Azure Cloud Shell
 * Run command line `ssh-keygen` to generate ssh-key of yourself
 * Go to Github Settings
 * Select `SSH and GPG keys`
@@ -31,13 +31,13 @@
 * Click Add SSH Key
 * Use `git clone git@github.com:nguyennhutamthien1993/IaCWebApp.git` to clone repository
 
-# Passing tests that are displayed after running the `make all` command from the `Makefile`
+## Passing tests that are displayed after running the `make all` command from the `Makefile`
 * Run command line `make all` with the result below:
 ![](./screenshots/make-all-output.png)
-# Output of a test run
+## Output of a test run
 ![](./screenshots/make-test.png)
 
-# Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+## Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 * Create AzureDevops Organization
 * Create AzureDevops Project
 * Create Azure Self-Hosted Agent Pool
@@ -49,9 +49,10 @@
 * Create New Pipeline, configure Github Source
 * Trigger change in Github Source or trigger Run Pipeline from AzureDevops
 ![](./screenshots/CICD-azure-app-service-success.png)
-# Running Azure App Service from Azure Pipelines automatic deployment
+## Running Azure App Service from Azure Pipelines automatic deployment
+![](./screenshots/auto-build-after-change.png)
 
-# Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+## Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
 The output should look similar to this:
 
 ```bash
